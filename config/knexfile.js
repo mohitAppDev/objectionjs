@@ -1,14 +1,14 @@
 // Update with your config settings.
-
 const { knexSnakeCaseMappers } = require('objection');
+require('dotenv').config();
 
 module.exports = {
   development: {
-    client: 'postgresql',
+    client:  process.env.CLIENT,
     connection: {
-      database: 'demo',
-      user: 'postgres',
-      password: '1234',
+      database: process.env.DATABASE,
+      user: process.env.DATABASE_USER,
+      password: process.env.DATABASE_PASS,
     },
     pool: {
       min: 2,
