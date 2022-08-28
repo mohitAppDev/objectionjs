@@ -4,11 +4,11 @@ require('dotenv').config();
 
 module.exports = {
   development: {
-    client:  process.env.CLIENT,
+    client: 'postgresql',
     connection: {
-      database: process.env.DATABASE,
-      user: process.env.DATABASE_USER,
-      password: process.env.DATABASE_PASS,
+      database: 'demo',
+      user: 'postgres',
+      password: '1234',
     },
     pool: {
       min: 2,
@@ -23,6 +23,19 @@ module.exports = {
     // automatically convert camelCase to snake case
     // so table names are in snake case
     // but we can use camelCase fields per default
+    ...knexSnakeCaseMappers(),
+  },
+  production: {
+    client: 'pg',
+    connection: process.env.CLIENT,
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: './migrations'
+    },
     ...knexSnakeCaseMappers(),
   },
 };
