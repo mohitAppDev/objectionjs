@@ -6,7 +6,7 @@
   "scripts": {
     "make-migration": "npx knex migrate:make init --migrations-directory migrations",
     "dev": "npm run migrate && nodemon app.js",
-    "start": "npm run migrate && nodemon app.js",
+    "start": "npm run migrate && node app.js",
     "migrate": "npx knex migrate:latest --knexfile ./config/knexfile.js",
     "down": "npx knex migrate:down --knexfile ./config/knexfile.js",
     "test": "echo \"Error: no test specified\" && exit 1"
