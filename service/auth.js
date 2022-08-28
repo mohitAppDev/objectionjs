@@ -14,7 +14,7 @@ class UserService {
   }
 
   addUser(data) {
-    let params = _.pick(data, ["firstName", "lastName", "email", "phoneNumber"]);
+    let params = _.pick(data, ["firstName", "lastName", "email", "phoneNumber", "userType"]);
     return User.query().insert({
       ...params
     })

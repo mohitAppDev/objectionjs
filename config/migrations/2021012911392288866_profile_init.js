@@ -12,6 +12,7 @@ exports.up = function (knex) {
       table.boolean('employmentStatus').notNullable().defaultTo(0);
       table.boolean('isAvailableToHire').notNullable().defaultTo(0);
       table.boolean('isAvailableToFreelance').notNullable().defaultTo(0);
+      table.string('companyAppliedFor');
       table.timestamps(true, true);
     })
 };

@@ -4,7 +4,7 @@ const emailService = require('../../service/email');
 const _ = require("lodash");
 const generalConfig = require('../../config/generalConfig')
 
-class UserController {
+class AuthController {
 
   async registration(req, res, next) {
     try {
@@ -129,4 +129,4 @@ class UserController {
 
 }
 
-module.exports = new UserController();
+module.exports = new AuthController();
