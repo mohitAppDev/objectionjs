@@ -16,6 +16,14 @@ class UserService {
     return User.query().deleteById(id);
   }
 
+  updateUserDetail(data) {
+    let id = data.id
+    let params = _.pick(data, ["firstName", "lastName"]);
+    return User.query().patch({
+      ...params
+    }).where("id", id)
+  }
+
 }
 
 module.exports = new UserService();

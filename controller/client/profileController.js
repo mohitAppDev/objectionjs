@@ -29,7 +29,7 @@ class ProfileController {
       if (userDetail) {
         const update = await profileService.updateProfileById(params);
         if (!update) res.json({ "error": true, "message": "Issue in profile updation!", "data": null });
-        res.json({ "error": false, "message": "Profile update successfully!", "data": userDetail });
+        res.json({ "error": false, "message": "Profile update successfully!", "data": update });
       }
       const create = await profileService.addProfile(params);
       if (!create) res.json({ "error": true, "message": "Issue in adding user profile!", "data": null });
