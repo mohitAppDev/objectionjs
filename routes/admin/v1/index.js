@@ -7,5 +7,6 @@
  var passport = require("../../../config/passport")();
 
  router.use('/admin/profile', passport.authenticate(), require('./profile'));
+ router.use('/admin/user', passport.authenticate(), require('./user'));
  
  module.exports = router;

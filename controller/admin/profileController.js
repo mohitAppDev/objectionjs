@@ -36,9 +36,9 @@ class ProfileController {
       }
       let { userId } = userDetail;
       if(userId == uid) res.json({ "error": true, "message": "You not able to delete your profile!" });
-      const update = await profileService.deleteProfileByAdmin(id);
-      if (!update) res.json({ "error": true, "message": "Issue in profile updation!", "data": null });
-      res.json({ "error": false, "message": "Profile update successfully!", "data": update });
+      const del = await profileService.deleteProfileByAdmin(id);
+      if (!del) res.json({ "error": true, "message": "Issue in deleting user profile!", "data": null });
+      res.json({ "error": false, "message": "Profile deleted successfully!" });
     } catch (err) {
       console.error(err);
       res.status(500).json(err);

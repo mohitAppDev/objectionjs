@@ -1,9 +1,7 @@
 const express = require('express');
 const authController = require('../../../controller/client/authController');
 const router = express.Router();
-var passport = require("../../../config/passport")();
 
-// router.get('/user/:id', authController.getUser);
 router.post('/signup', authController.registration);
 router.post('/send_code', authController.sendPhoneNoVerification);
 router.post('/verify_code', authController.verifyPhoneNoVerifyCode);
