@@ -17,6 +17,9 @@ app.use(bodyParser.json({
 }))
 app.use(express.json());
 app.use(router);
+app.use('/', (req, res, next) => {
+    res.send("Hello Server working")
+})
 
 const sslServer = https.createServer({
     key: fs.readFileSync(path.join(__dirname, 'cert', 'key.pem')),
